@@ -53,7 +53,7 @@ internal class AlarmPingSender(val service: MqttService) : MqttPingSender {
         private const val PING_JOB = "PING_JOB"
     }
 
-    internal inner class PingWorker(context: Context, workerParams: WorkerParameters) :
+    inner class PingWorker(context: Context, workerParams: WorkerParameters) :
         CoroutineWorker(context, workerParams) {
         override suspend fun doWork(): Result =
             suspendCancellableCoroutine { continuation ->
